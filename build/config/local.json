@@ -1,0 +1,22 @@
+{
+  "clear_build_path" : true,
+  "build_in": "img",
+  "next": [
+    {
+      "build_in": "storage-enabled",
+      "build": "docker",
+      "build_in" : "docker",
+      "config" : {
+        "base_image" : "eons/img_base",
+        "image_name" : "eons/img_storage-enabled",
+        "image_os" : "alpine",
+        "also" : [
+          "COPY --from=rclone/rclone:latest /usr/local/bin/rclone /usr/local/bin/rclone"
+        ],
+        "tags" : [
+          "latest"
+        ]
+      }
+    }
+  ]
+}
