@@ -1,5 +1,5 @@
 {
-  "name": "storage-enabled",
+  "name": "storage.enabled",
   "type": "img",
   "clear_build_path" : true,
   "build_in" : "tmp",
