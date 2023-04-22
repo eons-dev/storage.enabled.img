@@ -1,0 +1,15 @@
+clear_build_path: true
+build_in: img
+next:
+- build_in: docker
+	build: docker
+	config:
+		base_image: eons/base.img
+		image_name: eons/storage.enabled.img
+		image_os: alpine
+		install: 
+		- fuse3
+		also:
+		- COPY --from=rclone/rclone:latest /usr/local/bin/rclone /usr/local/bin/rclone
+		tags:
+		- latest
