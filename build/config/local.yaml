@@ -11,5 +11,7 @@ next:
 		- fuse3
 		also:
 		- COPY --from=rclone/rclone:latest /usr/local/bin/rclone /usr/local/bin/rclone
+		launch:
+			05_fuse: modprobe fuse
 		tags:
 		- latest
