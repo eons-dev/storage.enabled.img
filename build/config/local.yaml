@@ -9,9 +9,12 @@ next:
 		image_os: alpine
 		install: 
 		- fuse3
+		- syncthing
+		- rsync
 		also:
 		- COPY --from=rclone/rclone:latest /usr/local/bin/rclone /usr/local/bin/rclone
 		launch:
 			05_fuse: modprobe fuse
+			10_syncthing: syncthing --no-browser --home="/root/.config/syncthing"
 		tags:
 		- latest
